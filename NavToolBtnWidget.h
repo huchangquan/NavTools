@@ -16,8 +16,10 @@ class NavToolBtnWidget : public QWidget
     Q_OBJECT
 
 public:
+    NavToolBtnWidget(QWidget *parent = 0);
+   //之所以注释掉是为了方便使用Qt 提升控件
+//    NavToolBtnWidget(Qt::Orientation orientation = Qt::Vertical , QWidget *parent = 0);
 
-    explicit NavToolBtnWidget(Qt::Orientation orientation = Qt::Vertical , QWidget *parent = 0);
     ~NavToolBtnWidget();
 
     void removeAll();
@@ -37,10 +39,13 @@ public:
     quint8 getMoveFrameSpacing() const;
     void setMoveFrameSpacing(const quint8 &moveFrameSpacing);
 
+    Qt::Orientation getOrientation() const;
+    void setOrientation(const Qt::Orientation &orientation);
+
 public slots:
     void slotToolBtnClicked(bool checked);
 signals:
-    void sigCheckedToolBtn(int row);
+    void sigCheckedToolBtn(int index);
 protected:
     void resizeEvent(QResizeEvent *event) override;
 private:

@@ -2,12 +2,12 @@
 #include "ui_NavToolBtnWidget.h"
 #include <QTableWidget>
 
-NavToolBtnWidget::NavToolBtnWidget(Qt::Orientation orientation,QWidget *parent) :
+NavToolBtnWidget::NavToolBtnWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::NavToolBtnWidget)
 {
     ui->setupUi(this);
-    _orientation = orientation;
+
     _moveFrame = new QFrame(this);
 //    _moveFrame->setStyleSheet("QFrame{background:red;}");
     _moveFrame->setVisible(false);
@@ -72,6 +72,16 @@ void NavToolBtnWidget::resizeEvent(QResizeEvent *event)
     updateLeftFrame();
 }
 
+Qt::Orientation NavToolBtnWidget::getOrientation() const
+{
+    return _orientation;
+}
+
+void NavToolBtnWidget::setOrientation(const Qt::Orientation &orientation)
+{
+    _orientation = orientation;
+}
+
 quint8 NavToolBtnWidget::getMoveFrameSpacing() const
 {
     return _moveFrameSpacing;
@@ -103,6 +113,7 @@ NavToolButton * NavToolBtnWidget::addItem(const QString & text,
                                           const QString & iconNormalOn)
 {
     NavToolButton * tBtn = new NavToolButton(this);
+    tBtn->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
     tBtn->setText(text);
     tBtn->setCheckable(true);
     if(toolTip.isEmpty())
@@ -131,6 +142,8 @@ NavToolButton * NavToolBtnWidget::addItem(const QString & text,
         this->setLayout(_boxLayout);
     }
     _boxLayout->addWidget(tBtn);
+//    _boxLayout->setContentsMargins(0,0,0,0);
+    _boxLayout->setSpacing(0);
     tBtn->show();
     connect(tBtn,SIGNAL(clicked(bool)),this,SLOT(slotToolBtnClicked(bool)));
     return tBtn;

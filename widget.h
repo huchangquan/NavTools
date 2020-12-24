@@ -16,6 +16,9 @@ public:
     ~Widget();
 
     void init();
+private slots:
+    void on_pushButton_uploadFile_clicked();
+    void on_pushButton_historicalRecords_clicked();
 private:
     Ui::Widget *ui;
 };

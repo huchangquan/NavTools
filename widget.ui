@@ -6,18 +6,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>461</width>
+    <height>422</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>叶海-QQ：419087137</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget#NavToolBtnWidget QFrame{
+   <string notr="true">.QFrame{
+background-color: rgb(44, 44, 44);
+}
+.QStackedWidget{
+background-color: rgb(90, 90, 90);
+}
+QWidget#NavToolBtnWidget QFrame,
+QWidget#widget_nav QFrame{
 background:red;
 }
-QWidget#NavToolBtnWidget QToolButton{
+QWidget#NavToolBtnWidget QToolButton,
+QWidget#widget_nav QToolButton{
 border:0px;
 padding-top:10px;
 padding-bottom:10px;
@@ -26,16 +34,282 @@ padding-right:20px;
 background-color: rgb(0, 170, 255);
 color: rgb(255, 255, 255);
 }
-QWidget#NavToolBtnWidget QToolButton:hover{
+QWidget#NavToolBtnWidget QToolButton:hover,
+QWidget#widget_nav QToolButton:hover{
 background-color: rgb(0, 170, 255,150);
 }
-QWidget#NavToolBtnWidget QToolButton:checked{
+QWidget#NavToolBtnWidget QToolButton:checked,
+QWidget#widget_nav QToolButton:checked{
 background-color: rgb(0, 133, 199);
 }</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout"/>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout"/>
+        </item>
+        <item>
+         <widget class="QStackedWidget" name="stackedWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page">
+           <widget class="QLabel" name="label">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>100</y>
+              <width>54</width>
+              <height>12</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <widget class="QLabel" name="label_2">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>100</y>
+              <width>54</width>
+              <height>12</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_2">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="NavToolBtnWidget" name="widget_nav" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>60</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget_2">
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="page_3">
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>60</y>
+            <width>54</width>
+            <height>12</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_4">
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>30</y>
+            <width>54</width>
+            <height>12</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_3">
+     <property name="styleSheet">
+      <string notr="true">.QFrame{
+background-color: rgb(245, 245, 245);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QWidget" name="widget_nav_2" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">.QWidget{
+border-bottom:1px solid rgb(138,138,138);
+}
+QPushButton{
+background-color:none;
+border-radius:0px;
+border:0px;
+color:rgb(138,138,138);
+font: 75 10pt &quot;微软雅黑&quot;;
+border-bottom:2px solid rgba(138,138,138,0);
+}
+QPushButton:hover{
+color:rgb(100,100,100);
+
+}
+QPushButton:checked{
+color:rgb(45,45,45);
+border-bottom:2px solid rgba(34,149,232,255);
+}</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_uploadFile">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>上传文件</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_historicalRecords">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>历史记录</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoRepeat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget_3">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="page_5">
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>40</y>
+            <width>54</width>
+            <height>12</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_6">
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>30</y>
+            <width>54</width>
+            <height>12</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>NavToolBtnWidget</class>
+   <extends>QWidget</extends>
+   <header>NavToolBtnWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
